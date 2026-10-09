@@ -124,3 +124,32 @@ The successful ingestion confirmed that the endpoint-to-SIEM log collection pipe
 
 This completed the initial centralized endpoint monitoring configuration.
 
+
+## 5. Validation & Lessons Learned
+
+### Validation Results
+
+After completing the initial configuration, I verified the following:
+
+- pfSense LAN and DHCP were configured successfully.
+- The Windows 11 endpoint obtained an IP address from the lab network.
+- The endpoint could reach the Splunk receiving port (TCP 9997).
+- Splunk Universal Forwarder established an active connection with Splunk Enterprise.
+- Sysmon events were successfully indexed and searchable in Splunk.
+
+### Lessons Learned
+
+This phase helped me gain practical experience with:
+
+- Configuring isolated virtual networks and firewall routing.
+- Understanding how overlapping subnets affect connectivity.
+- Troubleshooting network communication between virtual machines and the physical host.
+- Configuring Windows endpoint telemetry and centralized log forwarding.
+- Investigating service permissions and event log access errors.
+- Validating the complete log collection pipeline rather than assuming that an active connection means events are being received.
+
+### Next Steps
+
+The next phase will focus on analyzing endpoint activity in Splunk, developing SPL searches, and investigating controlled security events.
+
+Additional monitoring capabilities, including Wazuh, are planned for future phases.
