@@ -1,0 +1,84 @@
+{
+  "_index": "wazuh-alerts-4.x-2026.10.15",
+  "_id": "KOH2PqEBxSeS8hEaU7b0",
+  "_score": null,
+  "_source": {
+    "input": {
+      "type": "log"
+    },
+    "agent": {
+      "ip": "10.0.2.15",
+      "name": "Windows11-SOC-Endpoint",
+      "id": "001"
+    },
+    "manager": {
+      "name": "wazuh-server"
+    },
+    "data": {
+      "win": {
+        "eventdata": {
+          "subjectLogonId": "0xa8cca7",
+          "subjectUserSid": "S-1-5-21-3974051094-1159112706-702885087-1001",
+          "subjectDomainName": "SOC-WIN11",
+          "privilegeList": "SeSecurityPrivilege     SeTakeOwnershipPrivilege     SeLoadDriverPrivilege     SeBackupPrivilege     SeRestorePrivilege     SeDebugPrivilege     SeSystemEnvironmentPrivilege     SeImpersonatePrivilege     SeDelegateSessionUserImpersonatePrivilege",
+          "subjectUserName": "SOCAnalyst"
+        },
+        "system": {
+          "eventID": "4672",
+          "keywords": "0x8020000000000000",
+          "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+          "level": "0",
+          "channel": "Security",
+          "opcode": "0",
+          "message": "\"Special privileges assigned to new logon.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-21-3974051094-1159112706-702885087-1001\r\n\tAccount Name:\t\tSOCAnalyst\r\n\tAccount Domain:\t\tSOC-WIN11\r\n\tLogon ID:\t\t0xA8CCA7\r\n\r\nPrivileges:\t\tSeSecurityPrivilege\r\n\t\t\tSeTakeOwnershipPrivilege\r\n\t\t\tSeLoadDriverPrivilege\r\n\t\t\tSeBackupPrivilege\r\n\t\t\tSeRestorePrivilege\r\n\t\t\tSeDebugPrivilege\r\n\t\t\tSeSystemEnvironmentPrivilege\r\n\t\t\tSeImpersonatePrivilege\r\n\t\t\tSeDelegateSessionUserImpersonatePrivilege\"",
+          "version": "0",
+          "systemTime": "2026-10-15T09:47:39.4876294Z",
+          "eventRecordID": "21480",
+          "threadID": "4232",
+          "computer": "SOC-WIN11",
+          "task": "12548",
+          "processID": "836",
+          "severityValue": "AUDIT_SUCCESS",
+          "providerName": "Microsoft-Windows-Security-Auditing"
+        }
+      }
+    },
+    "rule": {
+      "firedtimes": 2,
+      "mail": false,
+      "level": 3,
+      "description": "Special privileges assigned to new logon.",
+      "groups": [
+        "windows",
+        " WEF"
+      ],
+      "mitre": {
+        "technique": [
+          "Domain Policy Modification"
+        ],
+        "id": [
+          "T1484"
+        ],
+        "tactic": [
+          "Defense Evasion",
+          "Privilege Escalation"
+        ]
+      },
+      "id": "67028"
+    },
+    "location": "EventChannel",
+    "decoder": {
+      "name": "windows_eventchannel"
+    },
+    "id": "1792057682.127402",
+    "timestamp": "2026-10-15T09:48:02.775+0000"
+  },
+  "fields": {
+    "timestamp": [
+      "2026-10-15T09:48:02.775Z"
+    ]
+  },
+  "sort": [
+    1792057682775
+  ]
+}
