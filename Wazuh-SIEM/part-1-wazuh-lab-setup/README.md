@@ -141,6 +141,46 @@ After obtaining the installer within the endpoint VM, the installation completed
 
 I used SSH local port forwarding to access the Wazuh Dashboard from the physical host and verified access through the browser.
 
+
+
+### SOC Lab Architecture & Security Event Flow
+
+The diagram below illustrates the deployed Wazuh SIEM environment, including the Windows 11 monitored endpoint, Ubuntu-based Wazuh server, and security event processing pipeline.
+
+```mermaid
+flowchart TB
+    HOST["Windows Physical Host<br/>VirtualBox<br/>Dashboard via SSH tunnel: localhost:8443"]
+
+    subgraph LAB["VirtualBox Lab — NAT + Host-only Networking"]
+        direction LR
+
+        WIN["Windows 11 VM<br/>192.168.56.102<br/>Security Events: 4625, 4624, 4672<br/>Wazuh Agent 4.14.8"]
+
+        subgraph UBUNTU["Ubuntu Server 24.04 — 192.168.56.101"]
+            direction TB
+            LINUX["Linux Logs<br/>SSH Authentication • sudo • FIM"]
+            MANAGER["Wazuh Manager 4.14.8<br/>Decoders • Rules • Alerts"]
+            FILEBEAT["Filebeat<br/>Alert Forwarding"]
+            INDEXER["Wazuh Indexer<br/>Alert Storage and Search"]
+            DASH["Wazuh Dashboard<br/>Threat Hunting and Investigation"]
+
+            LINUX --> MANAGER
+            MANAGER --> FILEBEAT
+            FILEBEAT --> INDEXER
+            INDEXER --> DASH
+        end
+
+        WIN -->|"Agent forwards security events<br/>Host-only network"| MANAGER
+    end
+
+    HOST -.->|"SSH tunnel for dashboard access"| DASH
+```
+
+**Security event flow:** Windows security events are collected by the Wazuh Agent and forwarded to the Wazuh Manager over the host-only network. Linux SSH, sudo, and file integrity events are monitored locally on the Ubuntu server. The Manager processes events using decoders and detection rules. Filebeat forwards generated alerts to the Wazuh Indexer, where they become searchable through the Wazuh Dashboard.
+
+**Network design:** Both virtual machines use NAT for outbound connectivity and host-only networking for communication between the endpoint, server, and physical host. The SSH tunnel provides dashboard access from the Windows physical host.
+
+
 ## 8. Validation & Lessons Learned
 
 ### Validation Results
