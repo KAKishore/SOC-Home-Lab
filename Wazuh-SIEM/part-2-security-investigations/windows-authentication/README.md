@@ -69,13 +69,19 @@ These events were consistent with controlled, authorized lab activity. No eviden
 
 ## 6. Evidence
 
-Wazuh alert JSON exports:
+### Wazuh Authentication Event Correlation
 
-- `failed-logon-4625.json`
-- `successful-logon-4624.json`
-- `privileged-logon-4672.json`
+The Wazuh Threat Hunting dashboard shows Windows Events 4625, 4624, and 4672, including their detection rules, severity levels, and timestamps.
 
-Screenshots and JSON evidence will be added to this investigation folder.
+![Windows Authentication Event Correlation](evidence/windows-authentication-event-correlation.png)
+
+### Wazuh JSON Alert Exports
+
+The following JSON files contain the original Wazuh alert records used during the investigation:
+
+- [Failed Authentication — Event 4625](evidence/failed-logon-4625.json)
+- [Successful Authentication — Event 4624](evidence/successful-logon-4624.json)
+- [Special Privileges Assigned — Event 4672](evidence/privileged-logon-4672.json)
 
 ## 7. Conclusion
 
