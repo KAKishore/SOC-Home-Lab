@@ -51,7 +51,9 @@ Although the activity was legitimate, monitoring sudo execution provides useful 
 
 ## 6. Evidence
 
-Wazuh alert JSON and investigation screenshots will be added to the `evidence/` directory.
+### Wazuh JSON Alert Evidence
+
+- [Linux Sudo Privilege Activity — Rule 5402](evidence/linux-sudo-privilege-5402.json)
 
 ## 7. Key Learning Outcomes
 
