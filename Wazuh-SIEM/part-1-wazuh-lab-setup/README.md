@@ -119,68 +119,56 @@ I reviewed the event list, including Wazuh rule IDs, descriptions, severity leve
 
 A detailed security investigation will be documented in Part 2.
 
+
 ## 7. Troubleshooting
 
-During the setup, I encountered and addressed several configuration challenges.
+During deployment, I resolved the following setup challenges:
 
-### Virtual Machine Performance
-
-The Ubuntu server experienced temporary performance issues during operation. After the VM recovered, I verified that the Wazuh services were running successfully.
-
-### Network Connectivity
-
-I configured a dedicated host-only network to establish communication between the Ubuntu Wazuh server and Windows endpoint.
-
-### Windows Agent Installation
-
-The initial installation attempt encountered a file-location issue because the installer was not available inside the Windows VM.
-
-After obtaining the installer within the endpoint VM, the installation completed successfully.
-
-### Dashboard Connectivity
-
-I used SSH local port forwarding to access the Wazuh Dashboard from the physical host and verified access through the browser.
+| Challenge | Resolution |
+|---|---|
+| VM Performance | Verified Wazuh services after temporary Ubuntu VM performance issues. |
+| Network Connectivity | Configured host-only networking to enable communication between both VMs. |
+| Agent Installation | Resolved the installer file-location issue and successfully installed the Windows Wazuh Agent. |
+| Dashboard Access | Configured SSH port forwarding to securely access the Wazuh Dashboard from the physical host. |
 
 
+## 8. SOC Lab Architecture & Security Event Flow
 
-### SOC Lab Architecture & Security Event Flow
-
-The diagram below illustrates the deployed Wazuh SIEM environment, including the Windows 11 monitored endpoint, Ubuntu-based Wazuh server, and security event processing pipeline.
+The diagram illustrates the deployed Wazuh SIEM environment and how security events are collected, processed, and investigated.
 
 <p align="center">
   <img src="Wazuh%20Home%20Lab%20Architecture%20Flow.png" alt="Wazuh SOC Lab Architecture" width="650">
 </p>
 
-**Security event flow:** Windows security events are collected by the Wazuh Agent and forwarded to the Wazuh Manager over the host-only network. Linux SSH, sudo, and file integrity events are monitored locally on the Ubuntu server. The Manager processes events using decoders and detection rules. Filebeat forwards generated alerts to the Wazuh Indexer, where they become searchable through the Wazuh Dashboard.
+### Security Event Flow
 
-**Network design:** Both virtual machines use NAT for outbound connectivity and host-only networking for communication between the endpoint, server, and physical host. The SSH tunnel provides dashboard access from the Windows physical host.
+- **Windows 11:** The Wazuh Agent collects and forwards Windows security events.
+- **Ubuntu Server:** Wazuh monitors local SSH, sudo, and file integrity activity.
+- **Wazuh Manager:** Analyzes events using decoders and detection rules.
+- **Filebeat & Indexer:** Forward and store alerts for searching.
+- **Wazuh Dashboard:** Provides centralized alert review and investigation.
+
+**Network:** NAT for outbound connectivity, host-only networking for VM communication, and an SSH tunnel for dashboard access.
 
 
-## 8. Validation & Lessons Learned
+## 9. Validation & Lessons Learned
 
-### Validation Results
-
-- Successfully deployed the Wazuh all-in-one server.
-- Configured VirtualBox NAT and host-only networking.
-- Verified communication between the Windows and Ubuntu virtual machines.
-- Installed and connected the Windows Wazuh Agent.
-- Confirmed that the Windows endpoint appeared as active in the Wazuh Dashboard.
-- Verified that endpoint security events were visible in Threat Hunting.
+### Validation
+- Verified Wazuh Manager, Indexer, and Dashboard services.
+- Confirmed network connectivity between both VMs.
+- Connected the Windows 11 Wazuh Agent (ID 001).
+- Verified security events in Wazuh Threat Hunting.
+- Successfully accessed the Dashboard through an SSH tunnel.
 
 ### Lessons Learned
+- Configuring virtual networks and troubleshooting connectivity.
+- Deploying and validating Wazuh SIEM components.
+- Understanding endpoint log collection and alert processing.
+- Distinguishing agent connectivity from successful log ingestion.
 
-This phase provided hands-on experience with:
 
-- Virtual machine deployment and resource allocation.
-- Linux server administration.
-- VirtualBox network configuration and connectivity troubleshooting.
-- Deploying and validating SIEM components.
-- Configuring endpoint monitoring.
-- Understanding the security event collection pipeline.
-- Distinguishing successful agent connectivity from actual security event ingestion.
+## 10. Next Steps
 
-## 9. Next Steps
-
-Part 2 will focus on generating controlled Windows security events, investigating them through Wazuh Threat Hunting, analyzing relevant event fields, and mapping observed behavior to MITRE ATT&CK where supported by the evidence.
+Part 2 documents hands-on security investigations involving Windows authentication, Linux SSH activity, sudo privilege usage, and file integrity monitoring (FIM), including Wazuh alert analysis and MITRE ATT&CK mappings.
 
 All security testing is performed within my authorized home lab environment.
