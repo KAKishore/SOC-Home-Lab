@@ -49,11 +49,17 @@ The observed activity was authorized and performed as part of controlled lab tes
 
 Although the activity was legitimate, monitoring sudo execution provides useful visibility into privileged actions that may require investigation.
 
+
 ## 6. Evidence
 
-### Wazuh JSON Alert Evidence
+### Wazuh Sudo Alert Correlation
+
+![Linux Sudo Rule 5402](evidence/linux-sudo-rule-5402-correlation.png)
+
+### JSON Alert Evidence
 
 - [Linux Sudo Privilege Activity — Rule 5402](evidence/linux-sudo-privilege-5402.json)
+
 
 ## 7. Key Learning Outcomes
 
