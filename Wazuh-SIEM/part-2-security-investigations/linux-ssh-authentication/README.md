@@ -77,14 +77,19 @@ The reviewed events were consistent with authorized testing and administration. 
 
 The investigation also identified a visibility limitation when authentication activity occurred before Wazuh monitoring became available.
 
+
 ## 6. Evidence
 
-### Wazuh SSH Authentication Alerts
+### Wazuh SSH Authentication Event Correlation
 
-- Failed SSH Authentication — Rule `5760`
-- Successful SSH Authentication — Rule `5715`
+The Wazuh Threat Hunting dashboard shows both failed SSH authentication (Rule 5760, Level 5) and successful SSH authentication (Rule 5715, Level 3) events on the Linux endpoint.
 
-Supporting JSON alert records and screenshots will be linked here after uploading them to the investigation evidence folder.
+![Linux SSH Authentication Event Correlation](evidence/linux-ssh-authentication-correlation.png)
+
+### Wazuh JSON Alert Evidence
+
+- [Failed SSH Authentication — Rule 5760](evidence/linux-ssh-failed-authentication-5760.json)
+  
 
 ## 7. Key Learning Outcomes
 
