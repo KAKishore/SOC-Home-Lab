@@ -16,20 +16,22 @@ My goal is to understand how security events are generated, collected, analyzed,
 | Windows 11 VM | Monitored endpoint |
 | Wazuh Agent | Endpoint monitoring and log collection |
 
+
 ## Architecture
 
-The lab uses VirtualBox with NAT and Host-only networking to establish communication between the Windows 11 endpoint and the Ubuntu-based Wazuh server.
+The SOC home lab runs in VirtualBox, using NAT and Host-only networking for communication between the Ubuntu-based Wazuh server and the Windows 11 endpoint.
 
-The Wazuh Agent installed on Windows 11 collects endpoint security information and forwards it to the Wazuh server for centralized monitoring and analysis.
+Wazuh provides centralized security monitoring, while Windows and Linux security events are analyzed through the Wazuh Dashboard.
 
-An architecture diagram will be added to the detailed setup documentation.
+The architecture diagram, network configuration, and setup details are documented in [Part 1 — Lab Setup & Architecture](part-1-wazuh-lab-setup/README.md).
+
 
 ## Project Progress
 
 | Phase | Description | Status |
 |---|---|---|
 | 1 | Lab Setup and Architecture | Completed |
-| 2 | Security Event Analysis, Threat Hunting & MITRE ATT&CK | In Progress |
+| 2 | Security Event Analysis, Threat Hunting & MITRE ATT&CK | Completed |
 | 3 | Sysmon Integration & Endpoint Detection | Planned |
 | 4 | Network Monitoring & Lab Expansion | Planned |
 | 5 | Advanced Detection & Incident Investigation | Planned |
@@ -42,8 +44,13 @@ An architecture diagram will be added to the detailed setup documentation.
 - Verified the endpoint's active status in the Wazuh Dashboard.
 - Confirmed that endpoint security alerts are being collected and displayed.
 
+
 ## Documentation
 
-Detailed setup procedures, troubleshooting, validation results, and investigation findings will be documented in separate sections as the project progresses.
+- [Part 1 — Lab Setup & Architecture](part-1-wazuh-lab-setup/README.md)
+- [Part 2 — Security Investigations](part-2-security-investigations/README.md)
 
-All security testing is performed within my authorized home lab environment.
+Each section includes technical documentation, investigation findings, screenshots, and supporting evidence.
+
+All security testing was performed in an authorized home lab environment.
+
