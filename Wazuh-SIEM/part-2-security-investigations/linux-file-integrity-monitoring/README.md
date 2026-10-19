@@ -50,7 +50,14 @@ These events were generated during authorized lab testing. However, unexpected c
 
 ## 6. Evidence
 
-Wazuh FIM alert JSON exports and dashboard screenshots will be added to the `evidence/` directory.
+![Linux FIM Event Correlation](evidence/linux-fim-event-correlation.png)
+
+### JSON Alert Evidence
+
+- [File Added — Rule 554](evidence/linux-fim-file-added-554.json)
+- [File Modified — Rule 550](evidence/linux-fim-file-modified-550.json)
+- [File Deleted — Rule 553](evidence/linux-fim-file-deleted-553.json)
+
 
 ## 7. Key Learning Outcomes
 
