@@ -18,14 +18,16 @@ All activities were performed in an authorized home lab environment.
 
 The environment and network configuration are documented in [Part 1 — Lab Setup & Architecture](../part-1-wazuh-lab-setup/README.md).
 
+
 ## 3. Completed Investigations
 
 | Investigation | Events / Wazuh Rules | Status |
 |---|---|---|
-| Windows Authentication | 4625, 4624, 4672 | Completed |
-| Linux SSH Authentication | 5760, 5715 | Completed |
-| Linux sudo Activity | 5402 | Completed |
-| File Integrity Monitoring | 554, 550, 553 | Completed |
+| [Windows Authentication](windows-authentication/README.md) | 4625, 4624, 4672 | Completed |
+| [Linux SSH Authentication](linux-ssh-authentication/README.md) | 5760, 5715 | Completed |
+| [Linux Sudo Privilege Monitoring](linux-sudo-privilege-monitoring/README.md) | 5402 | Completed |
+| [Linux File Integrity Monitoring](linux-file-integrity-monitoring/README.md) | 554, 550, 553 | Completed |
+
 
 ## 4. Investigation Methodology
 
@@ -38,7 +40,10 @@ The environment and network configuration are documented in [Part 1 — Lab Setu
 
 ## 5. Investigation Documentation
 
-Detailed investigations, screenshots, and JSON evidence will be organized in separate folders for each investigation.
+Each investigation includes a dedicated report documenting the investigation objective, lab environment, detection findings, SOC analysis, and conclusions.
+
+Supporting evidence is organized within each investigation's `evidence/` directory, including Wazuh dashboard screenshots and JSON alert exports.
+
 
 ## 6. Key Learning Outcomes
 
