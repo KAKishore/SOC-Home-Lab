@@ -1,50 +1,70 @@
 # SOC Home Lab | SIEM Monitoring & Incident Investigation
 
 ## Overview
-This project documents my hands-on SOC home lab, built to practice security monitoring, log collection, threat detection, and incident investigation.
 
-My goal is to understand how security events are generated, collected, and analyzed in a SOC environment.
+This repository documents my hands-on Security Operations Center (SOC) home lab projects, focusing on SIEM monitoring, endpoint security, log analysis, threat detection, and incident investigation.
 
-## Lab Environment
+The repository includes Wazuh and Splunk lab environments, with completed investigations, technical documentation, and supporting evidence.
 
-| Tool | Purpose |
-|---|---|
-| VirtualBox | Virtualization |
-| pfSense CE | Firewall and network routing |
-| Windows 11 | Monitored endpoint |
-| Kali Linux | Controlled security testing |
-| Sysmon | Endpoint telemetry |
-| Splunk Universal Forwarder | Log forwarding |
-| Splunk Enterprise | SIEM and log analysis |
-| Wazuh (Planned) | Security monitoring, endpoint detection, and log analysis |
+## SOC Lab Environments
+
+### Wazuh SIEM Lab — Completed
+
+- VirtualBox
+- Ubuntu Server 24.04
+- Wazuh 4.14.8
+- Windows 11 VM
+- Wazuh Agents
+
+### Splunk SIEM Lab — Separate Project
+
+- Splunk Enterprise
+- Sysmon
+- Kali Linux
+- Windows endpoint
+
+Network monitoring and additional integrations are planned.
+
 
 ## Architecture
-The lab uses an isolated VirtualBox internal network (`SOC-LAN`) with pfSense as the gateway.
 
-Windows 11 generates Sysmon events, which are forwarded to Splunk Enterprise running on the physical host.
+This repository contains separate Wazuh and Splunk SIEM lab environments.
 
-*Architecture diagram coming soon.*
+The Wazuh lab uses VirtualBox, Ubuntu Server, and a Windows 11 endpoint for centralized security monitoring and investigation.
+
+[View Wazuh Lab Architecture](Wazuh-SIEM/part-1-wazuh-lab-setup/README.md)
+
+The Splunk lab is maintained as a separate project.
+
 
 ## Project Progress
 
-| Part | Description | Status |
-|---|---|---|
-| 1 | SOC Lab Setup & Architecture | Completed |
-| 2 | Endpoint Log Analysis | Planned |
-| 3 | Wazuh Deployment & Monitoring | Planned |
-| 4 | Attack Simulation & Detection | Planned |
-| 5 | Incident Investigation & Reporting | Planned |
+| Project | Status |
+|---|---|
+| Wazuh Lab Setup & Architecture | Completed |
+| Wazuh Security Investigations (4) | Completed |
+| Splunk SIEM Lab | In Progress |
+| Sysmon Integration with Wazuh | Planned |
+| Network Monitoring & Advanced Detection | Planned |
+
 
 ## Current Results
-- Configured pfSense and an isolated lab network.
-- Installed and configured Sysmon and Splunk Universal Forwarder.
-- Successfully forwarded Sysmon events to Splunk Enterprise.
-- Troubleshot networking and log collection issues.
+
+- Deployed Wazuh 4.14.8 on Ubuntu Server.
+- Connected and monitored a Windows 11 endpoint.
+- Completed four Wazuh security investigations.
+- Analyzed Windows authentication, Linux SSH, sudo, and FIM alerts.
+- Documented findings with JSON evidence and screenshots.
+- Started a separate Splunk SIEM lab project.
+
+
 
 ## Documentation
 
-- [Part 1 — SOC Lab Setup & Architecture](part-1-lab-setup/README.md)
+- [Wazuh SIEM — Project Overview](Wazuh-SIEM/README.md)
+- [Part 1 — Wazuh Lab Setup & Architecture](Wazuh-SIEM/part-1-wazuh-lab-setup/README.md)
+- [Part 2 — Security Investigations](Wazuh-SIEM/part-2-security-investigations/README.md)
+- [Splunk SIEM Lab](Splunk-SIEM/)
 
----
+All security testing was performed in an authorized home lab environment.
 
-*All security testing is intended for my authorized home lab environment.*
