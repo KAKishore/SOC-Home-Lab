@@ -12,7 +12,7 @@ The repository includes Wazuh and Splunk lab environments, with completed invest
 
 - VirtualBox
 - Ubuntu Server 24.04
-- Wazuh 4.14.8
+- Wazuh 4.14.8 (rc2)
 - Windows 11 VM
 - Wazuh Agents
 
