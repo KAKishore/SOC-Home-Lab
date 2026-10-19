@@ -12,7 +12,7 @@ The repository includes Wazuh and Splunk lab environments, with completed invest
 
 - VirtualBox
 - Ubuntu Server 24.04
-- Wazuh 4.14.8 (rc2)
+- Wazuh 4.14.8
 - Windows 11 VM
 - Wazuh Agents
 
@@ -50,7 +50,7 @@ The Splunk lab is maintained as a separate project.
 
 ## Current Results
 
-- Deployed Wazuh 4.14.8 (rc2) on Ubuntu Server 24.04.
+- Deployed Wazuh 4.14.8 on Ubuntu Server 24.04.
 - Connected and monitored a Windows 11 endpoint.
 - Completed four Wazuh security investigations.
 - Analyzed Windows authentication, Linux SSH, sudo, and FIM alerts.
