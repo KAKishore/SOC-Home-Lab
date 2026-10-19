@@ -12,7 +12,7 @@ My goal is to understand how security events are generated, collected, analyzed,
 |---|---|
 | VirtualBox | Virtualization platform |
 | Ubuntu Server 24.04 LTS | Wazuh server |
-| Wazuh 4.14.8 | Centralized security monitoring and analysis |
+| Wazuh 4.14.8 (rc2) | Centralized security monitoring and analysis |
 | Windows 11 VM | Monitored endpoint |
 | Wazuh Agent | Endpoint monitoring and log collection |
 
