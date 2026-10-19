@@ -1,0 +1,102 @@
+{
+  "_index": "wazuh-alerts-4.x-2026.10.15",
+  "_id": "KeEJQKEBxSeS8hEajbfA",
+  "_score": null,
+  "_source": {
+    "syscheck": {
+      "uname_after": "root",
+      "mtime_after": "2026-10-15T14:46:34",
+      "size_after": "60",
+      "gid_after": "0",
+      "mode": "realtime",
+      "path": "/opt/wazuh-fim-test/test.txt",
+      "sha1_after": "53e64c5b4441d1ce048209705769fad0701b714f",
+      "gname_after": "root",
+      "uid_after": "0",
+      "perm_after": "rw-r--r--",
+      "event": "deleted",
+      "md5_after": "613748a42f352a402b2ce136f53981a4",
+      "sha256_after": "8c1c1d3f3fceb06a64ab7a3ec1b13b9f0dbe71a0bce7a383cf46718ac0c89f02",
+      "inode_after": 3039027
+    },
+    "input": {
+      "type": "log"
+    },
+    "agent": {
+      "name": "wazuh-server",
+      "id": "000"
+    },
+    "manager": {
+      "name": "wazuh-server"
+    },
+    "rule": {
+      "mail": false,
+      "level": 7,
+      "pci_dss": [
+        "11.5"
+      ],
+      "hipaa": [
+        "164.312.c.1",
+        "164.312.c.2"
+      ],
+      "tsc": [
+        "PI1.4",
+        "PI1.5",
+        "CC6.1",
+        "CC6.8",
+        "CC7.2",
+        "CC7.3"
+      ],
+      "description": "File deleted.",
+      "groups": [
+        "ossec",
+        "syscheck",
+        "syscheck_entry_deleted",
+        "syscheck_file"
+      ],
+      "nist_800_53": [
+        "SI.7"
+      ],
+      "gdpr": [
+        "II_5.1.f"
+      ],
+      "firedtimes": 1,
+      "mitre": {
+        "technique": [
+          "File Deletion",
+          "Data Destruction"
+        ],
+        "id": [
+          "T1070.004",
+          "T1485"
+        ],
+        "tactic": [
+          "Defense Evasion",
+          "Impact"
+        ]
+      },
+      "id": "553",
+      "gpg13": [
+        "4.11"
+      ]
+    },
+    "location": "syscheck",
+    "decoder": {
+      "name": "syscheck_deleted"
+    },
+    "id": "1792075728.301358",
+    "full_log": "File '/opt/wazuh-fim-test/test.txt' deleted\nMode: realtime\n",
+    "timestamp": "2026-10-15T14:48:48.904+0000"
+  },
+  "fields": {
+    "syscheck.mtime_after": [
+      "2026-10-15T14:46:34.000Z"
+    ],
+    "timestamp": [
+      "2026-10-15T14:48:48.904Z"
+    ]
+  },
+  "sort": [
+    1792075728904
+  ]
+}

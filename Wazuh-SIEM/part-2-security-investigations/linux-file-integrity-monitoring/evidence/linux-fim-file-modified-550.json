@@ -1,0 +1,114 @@
+{
+  "_index": "wazuh-alerts-4.x-2026.10.15",
+  "_id": "JuEHQKEBxSeS8hEapbdr",
+  "_score": null,
+  "_source": {
+    "syscheck": {
+      "size_before": "28",
+      "uname_after": "root",
+      "mtime_after": "2026-10-15T14:46:34",
+      "size_after": "60",
+      "gid_after": "0",
+      "md5_before": "df2abd98d03159b4237638b19dca3eb9",
+      "sha256_before": "83784f5070ae3b4622cc73da50fa4094335baa52fd3a51f3aeeaf5f145c096cc",
+      "mtime_before": "2026-10-15T14:42:41",
+      "mode": "realtime",
+      "path": "/opt/wazuh-fim-test/test.txt",
+      "sha1_after": "53e64c5b4441d1ce048209705769fad0701b714f",
+      "changed_attributes": [
+        "size",
+        "mtime",
+        "md5",
+        "sha1",
+        "sha256"
+      ],
+      "gname_after": "root",
+      "uid_after": "0",
+      "perm_after": "rw-r--r--",
+      "event": "modified",
+      "md5_after": "613748a42f352a402b2ce136f53981a4",
+      "sha1_before": "cfaa2cdc83912faf3e745bbf32c3ca14dd67ef79",
+      "sha256_after": "8c1c1d3f3fceb06a64ab7a3ec1b13b9f0dbe71a0bce7a383cf46718ac0c89f02",
+      "inode_after": 3039027
+    },
+    "input": {
+      "type": "log"
+    },
+    "agent": {
+      "name": "wazuh-server",
+      "id": "000"
+    },
+    "manager": {
+      "name": "wazuh-server"
+    },
+    "rule": {
+      "mail": false,
+      "level": 7,
+      "pci_dss": [
+        "11.5"
+      ],
+      "hipaa": [
+        "164.312.c.1",
+        "164.312.c.2"
+      ],
+      "tsc": [
+        "PI1.4",
+        "PI1.5",
+        "CC6.1",
+        "CC6.8",
+        "CC7.2",
+        "CC7.3"
+      ],
+      "description": "Integrity checksum changed.",
+      "groups": [
+        "ossec",
+        "syscheck",
+        "syscheck_entry_modified",
+        "syscheck_file"
+      ],
+      "nist_800_53": [
+        "SI.7"
+      ],
+      "gdpr": [
+        "II_5.1.f"
+      ],
+      "firedtimes": 1,
+      "mitre": {
+        "technique": [
+          "Stored Data Manipulation"
+        ],
+        "id": [
+          "T1565.001"
+        ],
+        "tactic": [
+          "Impact"
+        ]
+      },
+      "id": "550",
+      "gpg13": [
+        "4.11"
+      ]
+    },
+    "location": "syscheck",
+    "decoder": {
+      "name": "syscheck_integrity_changed"
+    },
+    "id": "1792075594.299313",
+    "full_log": "File '/opt/wazuh-fim-test/test.txt' modified\nMode: realtime\nChanged attributes: size,mtime,md5,sha1,sha256\nSize changed from '28' to '60'\nOld modification time was: '1792075361', now it is '1792075594'\nOld md5sum was: 'df2abd98d03159b4237638b19dca3eb9'\nNew md5sum is : '613748a42f352a402b2ce136f53981a4'\nOld sha1sum was: 'cfaa2cdc83912faf3e745bbf32c3ca14dd67ef79'\nNew sha1sum is : '53e64c5b4441d1ce048209705769fad0701b714f'\nOld sha256sum was: '83784f5070ae3b4622cc73da50fa4094335baa52fd3a51f3aeeaf5f145c096cc'\nNew sha256sum is : '8c1c1d3f3fceb06a64ab7a3ec1b13b9f0dbe71a0bce7a383cf46718ac0c89f02'\n",
+    "timestamp": "2026-10-15T14:46:34.467+0000"
+  },
+  "fields": {
+    "syscheck.mtime_after": [
+      "2026-10-15T14:46:34.000Z"
+    ],
+    "syscheck.mtime_before": [
+      "2026-10-15T14:42:41.000Z"
+    ],
+    "timestamp": [
+      "2026-10-15T14:46:34.467Z"
+    ]
+  },
+  "sort": [
+    1792075594467
+  ]
+}

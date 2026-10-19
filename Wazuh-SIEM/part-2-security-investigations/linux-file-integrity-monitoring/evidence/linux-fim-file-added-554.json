@@ -1,0 +1,88 @@
+{
+  "_index": "wazuh-alerts-4.x-2026.10.15",
+  "_id": "_eG9PqEBxSeS8hEapLUb",
+  "_score": null,
+  "_source": {
+    "syscheck": {
+      "uname_after": "root",
+      "mtime_after": "2026-10-14T18:59:47",
+      "size_after": "65",
+      "gid_after": "0",
+      "mode": "scheduled",
+      "path": "/etc/netplan/50-cloud-init.yaml.bak",
+      "sha1_after": "ed4528c5b0cdd1c3a199565d115ed2cb1fc46a8c",
+      "gname_after": "root",
+      "uid_after": "0",
+      "perm_after": "rw-------",
+      "event": "added",
+      "md5_after": "0a2202a9deb32d2c76f5c55638847fe1",
+      "sha256_after": "acbe868b5e5489c8e0f104f4f750ab15c1362bdf0bf61fef71e5184aabbe81cc",
+      "inode_after": 263937
+    },
+    "input": {
+      "type": "log"
+    },
+    "agent": {
+      "name": "wazuh-server",
+      "id": "000"
+    },
+    "manager": {
+      "name": "wazuh-server"
+    },
+    "rule": {
+      "firedtimes": 1,
+      "mail": false,
+      "level": 5,
+      "pci_dss": [
+        "11.5"
+      ],
+      "hipaa": [
+        "164.312.c.1",
+        "164.312.c.2"
+      ],
+      "tsc": [
+        "PI1.4",
+        "PI1.5",
+        "CC6.1",
+        "CC6.8",
+        "CC7.2",
+        "CC7.3"
+      ],
+      "description": "File added to the system.",
+      "groups": [
+        "ossec",
+        "syscheck",
+        "syscheck_entry_added",
+        "syscheck_file"
+      ],
+      "id": "554",
+      "nist_800_53": [
+        "SI.7"
+      ],
+      "gpg13": [
+        "4.11"
+      ],
+      "gdpr": [
+        "II_5.1.f"
+      ]
+    },
+    "location": "syscheck",
+    "decoder": {
+      "name": "syscheck_new_entry"
+    },
+    "id": "1792053968.14403",
+    "full_log": "File '/etc/netplan/50-cloud-init.yaml.bak' added\nMode: scheduled\n",
+    "timestamp": "2026-10-15T08:46:08.071+0000"
+  },
+  "fields": {
+    "syscheck.mtime_after": [
+      "2026-10-14T18:59:47.000Z"
+    ],
+    "timestamp": [
+      "2026-10-15T08:46:08.071Z"
+    ]
+  },
+  "sort": [
+    1792053968071
+  ]
+}
